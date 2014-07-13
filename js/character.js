@@ -57,6 +57,11 @@ var Character = Class.extend({
         this.nose.position.z = 32;
         this.mesh.add(this.nose);
         
+        // dummy user for collision detection
+        // is always at the users location and
+        // the dummy performs all movement before the user
+        // to check that a collision isn't eminent. if it is
+        // the user isn't allowed to take the next step
         this.dummyMesh = new THREE.Object3D();
 
         // Set the vector of the current motion
