@@ -56,7 +56,7 @@ var Character = Class.extend({
         this.nose.position.y = 0;
         this.nose.position.z = 32;
         this.mesh.add(this.nose);
-        
+
         // dummy user for collision detection
         // is always at the users location and
         // the dummy performs all movement before the user
@@ -90,7 +90,7 @@ var Character = Class.extend({
 
         // Update the directions if we intersect with an obstacle
         var freeToMove = this.collision();
-        
+
         // If we're not static
         if (this.controls.up || this.controls.down || this.controls.left || this.controls.right) {
 
@@ -98,7 +98,7 @@ var Character = Class.extend({
             this.rotate();
 
             // Move the character
-            if(freeToMove) {
+            if (freeToMove) {
                 this.move();
             }
         }
@@ -106,15 +106,15 @@ var Character = Class.extend({
     // Test and avoid collisions
     collision: function() {
         'use strict';
-        
+
         this.dummyMesh.position.x = this.mesh.position.x;
         this.dummyMesh.position.y = this.mesh.position.y;
         this.dummyMesh.position.z = this.mesh.position.z;
-        
+
         this.dummyMesh.rotation.x = this.mesh.rotation.x;
         this.dummyMesh.rotation.y = this.mesh.rotation.y;
         this.dummyMesh.rotation.z = this.mesh.rotation.z;
-        
+
         if (this.controls.up) {
             this.dummyMesh.translateZ(this.WALK_SPEED);
         } else if (this.controls.down) {
@@ -123,7 +123,7 @@ var Character = Class.extend({
 
         // Maximum distance from the origin before we consider collision
         var distance = 64;
-        
+
         // Get the obstacles array from our world
         var obstacles = basicScene.world.getObstacles();
 

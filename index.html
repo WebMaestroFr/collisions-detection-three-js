@@ -4,7 +4,7 @@
         <title></title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+        <!-- The usual suspects -->
         <script src="js/jquery-1.10.2.min.js" type="text/javascript"></script>
         <script src="js/vendor/three.min.js" type="text/javascript"></script>
 
@@ -38,7 +38,7 @@
         <script>
             $(document).ready(function() {
                 if (Modernizr.webgl) {
-                    basicScene = new BasicScene();
+                    basicScene = new BasicScene;
                     function animate() {
                         requestAnimationFrame(animate);
                         basicScene.frame();
