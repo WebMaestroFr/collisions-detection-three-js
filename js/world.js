@@ -1,22 +1,22 @@
 var World = Class.extend({
     // Class constructor
-    init: function (args) {
+    init: function(args) {
         'use strict';
         // Set the different geometries composing the room
         var ground = new THREE.PlaneGeometry(512, 1024),
-            height = 128,
-            walls = [
-                new THREE.PlaneGeometry(ground.height, height),
-                new THREE.PlaneGeometry(ground.width, height),
-                new THREE.PlaneGeometry(ground.height, height),
-                new THREE.PlaneGeometry(ground.width, height)
-            ],
-            obstacles = [
-                new THREE.CubeGeometry(64, 64, 64)
-            ],
-            // Set the material, the "skin"
-            material = new THREE.MeshLambertMaterial(args),
-            i;
+                height = 128,
+                walls = [
+                    new THREE.PlaneGeometry(ground.height, height),
+                    new THREE.PlaneGeometry(ground.width, height),
+                    new THREE.PlaneGeometry(ground.height, height),
+                    new THREE.PlaneGeometry(ground.width, height)
+                ],
+                obstacles = [
+                    new THREE.CubeGeometry(64, 64, 64)
+                ],
+                // Set the material, the "skin"
+                material = new THREE.MeshLambertMaterial(args),
+                i;
         // Set the "world" modelisation object
         this.mesh = new THREE.Object3D();
         // Set and add the ground
@@ -45,7 +45,7 @@ var World = Class.extend({
         }
         this.obstacles[0].position.set(0, 32, 128);
     },
-    getObstacles: function () {
+    getObstacles: function() {
         'use strict';
         return this.obstacles.concat(this.walls);
     }
